@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Product</title>
+    <script type="text/javascript" th:src="@{/js/jquery-3.6.1.min.js}"></script>
+    <script type="text/javascript" th:src="@{/ckeditor/ckeditor.js}"></script>
+</head>
+<body>
+<h3>Edit Product</h3>
+
+<form th:action="${'/product/update'}" method="post">
+    <p style="display: none">ID</p>
+    <input type="text" name="id" th:value="${product.id}" style="display: none"/>
+
+    <p>Product Name</p>
+    <input type="text" id="productName" name="productName" th:value="${product.productName}"/>
+
+    <p>Price</p>
+    <input type="text" name="price" th:value="${product.price}"/>
+
+    <input type="submit" value="Submit" />
+</form>
+
+<script>
+    $(document).ready(function (){
+        CKEDITOR.replace("productName", {
+            height: 100
+        });
+    });
+</script>
+</body>
+</html>

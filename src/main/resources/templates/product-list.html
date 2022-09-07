@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List Product</title>
+</head>
+<body>
+<h3>List Product</h3>
+<button><a th:href="${'/product/add'}">Add</a></button>
+<table>
+    <thead>
+    <tr>
+        <td>Id</td>
+        <td>Product Name</td>
+        <td>Price</td>
+    </tr>
+    </thead>
+
+    <tbody>
+        <tr th:each="obj :${listProduct}">
+            <td th:text="${obj.id}">Id</td>
+            <td th:text="${obj.productName}">Product Name</td>
+            <td th:text="${obj.price}">Price</td>
+            <td> <a th:href="${'/product/delete/' + obj.id}">Delete</a></td>
+            <td> <a th:href="${'/product/edit/' + obj.id}">Edit</a></td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>

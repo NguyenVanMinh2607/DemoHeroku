@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Product</title>
+</head>
+<body>
+<h3>Add Product</h3>
+
+<form th:action="${'/product/save'}" method="get">
+    <p>Product Name</p>
+    <input type="text" name="productName"/>
+
+    <p>Price</p>
+    <input type="text" name="price"/>
+
+    <input type="submit" value="Submit"/>
+</form>
+</body>
+</html>
